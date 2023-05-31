@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+{% load static %}
+<style>
+    body
+    {
+    background-image:url("static/win.jpg");
+    webkit-background-size: cover;
+    moz-background-size: cover;
+    o-background-size: cover;
+    background-size: cover;
+    }
+</style>
+<body>
+<center>
+<form method="POST" class="post-form" action="/mov">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h1 style="color:white;background-color:black;"> Enter the Movies Details</h1>
+    </div>
+  </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"><h4 style="color:white;">Movie Id:</h4></label>
+    <div class="col-sm-4">
+      {{ form.movieid }}
+    </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><h4 style="color:white;">Movie Name:</h4></label>
+    <div class="col-sm-4">
+      {{ form.moviename }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4 style="color:white;">Movie Director:</h4></label>
+    <div class="col-sm-4">
+      {{ form.moviedirector }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h4 style="color:white;">Release Date:</h4></label>
+    <div class="col-sm-4">
+      {{ form.releasedate }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4"><br>
+        <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+    </div>
+  </div>
+    </div>
+</form>
+</center>>
+</body>
+</html>

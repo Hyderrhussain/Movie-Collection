@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+</head>
+<style>
+    body
+    {
+    background-color:cyan;
+    }
+</style>
+<body>
+<center>
+<form method="POST" class="post-form" action="/update/{{movie.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label></label>
+    <div>
+    <h2>Update Movie Details</h2>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><b>Movie Id:</b></label>
+    <div class="col-sm-4">
+       <input type="text" name="movieid" id="id_moveid" required maxlength="100" value="{{ movie.movieid }}"/>
+    </div>
+  </div><br>
+  <div class="form-group row">
+    <label><b>Movie Name:</b></label>
+    <div class="col-sm-4">
+        <input type="text" name="moviename" id="id_moviename" required maxlength="100" value="{{ movie.moviename }}" />
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><b>Movie Director:<b></b></label>
+    <div class="col-sm-4">
+        <input type="text" name="moviedirector" id="id_moviedirector" required maxlength="254" value="{{ movie.moviedirector }}" />
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><b>Release Date:</b></label>
+    <div class="col-sm-4">
+        <input type="date" name="releasedate" id="id_releasedate" required maxlength="15" value="{{ movie.releasedate }}" />
+    </div>
+  </div><br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success"><b>Update</b></button>
+    </div>
+  </div>
+    </div>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Records</title>
+    {% load static %}
+</head>
+<style>
+    body
+    {
+    background-image:url("static/a.jpg");
+    webkit-background-size: cover;
+    moz-background-size: cover;
+    o-background-size: cover;
+    background-size: cover;
+    }
+    th, td {
+  padding: 12px;}
+
+</style>
+<body>
+<center>
+<table style="width:40%">
+    <caption><h2>Movie Records</h2> </caption>
+    <thead class="thead-dark">
+    <tr>
+        <th>Movie ID</th>
+        <th>Movie Name</th>
+        <th>Movie Director</th>
+        <th>Release Date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for movie in movie %}
+    <tr><br>
+        <td>{{ movie.movieid }}</td>
+        <td>{{ movie.moviename }}</td>
+        <td>{{ movie.moviedirector }}</td>
+        <td>{{ movie.releasedate }}</td>
+        <td>
+            <a href="/edit/{{ movie.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ movie.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<center><b><a href="/mov" class="btn btn-primary">Add New Movie Record</a></b></center>
+</center>
+</body>
+</html>
